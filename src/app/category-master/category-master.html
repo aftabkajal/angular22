@@ -1,0 +1,126 @@
+<div class="admin-shell">
+  <aside class="sidebar d-none d-lg-flex flex-column">
+    <a class="brand-lockup" href="/home"><span class="brand-mark">i</span><span
+        class="brand-name">inquiry<span>desk</span></span></a>
+    <div class="sidebar-label">WORKSPACE</div>
+    <nav class="nav flex-column sidebar-nav">
+      <a class="nav-link" href="/enquery-list"><span class="nav-icon">▦</span>Overview</a>
+      <a class="nav-link" href="/enquery-list"><span class="nav-icon">☷</span>Inquiries<span
+          class="nav-count">12</span></a>
+    </nav>
+    <div class="sidebar-label mt-4">SETTINGS</div>
+    <nav class="nav flex-column sidebar-nav">
+      <a class="nav-link" href="/status"><span class="nav-icon">◉</span>Status master</a>
+      <a class="nav-link active" href="/Category"><span class="nav-icon">◈</span>Category master</a>
+    </nav>
+    <div class="sidebar-bottom mt-auto">
+      <div class="upgrade-card">
+        <div class="upgrade-spark">✦</div><strong>Need a hand?</strong>
+        <p>Our support team is here to help you.</p><a href="#">Contact support <span>→</span></a>
+      </div>
+      <div class="admin-profile">
+        <div class="avatar">JD</div>
+        <div class="profile-copy"><strong>Jordan Davis</strong><small>Administrator</small></div><span
+          class="profile-menu">•••</span>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-panel">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-2 text-muted small"><span>Settings</span><span>/</span><strong
+          class="text-dark">Category master</strong></div>
+      <div class="d-flex align-items-center gap-3"><button class="icon-button" type="button"
+          aria-label="Notifications">♧<span class="notification-dot"></span></button>
+        <div class="topbar-avatar">JD</div>
+      </div>
+    </header>
+    <div class="page-content container-fluid">
+      <div class="mb-4">
+        <div class="eyebrow mb-2">WORKSPACE SETTINGS</div>
+        <h1 class="page-title">Category master</h1>
+        <p class="page-subtitle mb-0">Create, update, and manage inquiry categories.</p>
+      </div>
+
+      <div class="row g-3 align-items-stretch">
+        <div class="col-12 col-lg-7">
+          <section class="card bg-warning h-100">
+            <div class="card-header">
+              <h2 class="h5 mb-1">Category list</h2>
+              <p class="mb-0">Review and manage the categories in your workspace.</p>
+            </div>
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">CATEGORY NAME</th>
+                      <th scope="col">STATUS</th>
+                      <th scope="col"><span class="visually-hidden">Actions</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    @for (item of categoryList(); track $index) {
+                    <tr>
+                      <td>{{ item.categoryId }}</td>
+                      <td>{{ item.categoryName }}</td>
+                      <td>
+                        <span
+                          [ngClass]="{ 'badge text-bg-success': item.isActive, 'badge text-bg-secondary': !item.isActive }">
+                          {{ item.isActive ? 'Active' : 'Inactive' }}
+                        </span>
+                      </td>
+                      <td class="text-nowrap">
+                        <button class="btn btn-sm btn-outline-dark me-1" (click)="editCategory(item)" type="button"
+                          aria-label="Edit Billing and payments">Edit</button>
+                        <button class="btn btn-sm btn-outline-danger" (click)="deleteCategory(item)" type="button"
+                          aria-label="Delete Billing and payments">Delete</button>
+                      </td>
+                    </tr>
+                    }
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="col-12 col-lg-5">
+          <section class="card bg-warning h-100">
+            <div class="card-header">
+              <h2 class="h5 mb-1">Category details</h2>
+              <p class="mb-0">Enter the category information below.</p>
+            </div>
+            <div class="card-body">
+              <form>
+                <div class="mb-3">
+                  <label class="form-label" for="categoryName">Category name</label>
+                  <input class="form-control" id="categoryName" [(ngModel)]="newCategory.categoryName"
+                    name="categoryName" type="text" placeholder="Enter category name">
+                </div>
+                <div class="form-check form-switch mb-4">
+                  <input class="form-check-input" id="isActive" [(ngModel)]="newCategory.isActive" name="isActive"
+                    type="checkbox" role="switch">
+                  <label class="form-check-label" for="isActive">Active</label>
+                </div>
+                <div class="d-flex flex-wrap gap-2">
+                  @if (newCategory.categoryId == 0) {
+                  <button class="btn btn-primary" type="button" (click)="onSaveCategory()">Save category</button>
+                  }@else{
+                  <button class="btn btn-primary" type="button" (click)="onUpdateCategory()">Update category</button>
+                  }
+
+                  <button class="btn btn-outline-secondary" type="reset">Clear form</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

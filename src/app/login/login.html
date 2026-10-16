@@ -1,0 +1,42 @@
+<main class="login-page">
+  <div class="container">
+    <div class="row min-vh-100 align-items-center justify-content-center py-5">
+      <div class="col-12 col-md-8 col-lg-5 col-xl-4">
+        <section class="login-card">
+          <a class="brand-lockup justify-content-center mb-5" routerLink="/home">
+            <span class="brand-mark">i</span>
+            <span class="brand-name">inquiry<span>desk</span></span>
+          </a>
+
+          <div class="login-kicker mb-2"><span class="eyebrow">ADMIN PORTAL</span><span class="demo-badge">DEMO</span></div>
+          <h1 class="login-title">Welcome back</h1>
+          <p class="text-muted mb-4">Sign in to manage customer inquiries.</p>
+
+          <form>
+            <div class="mb-3">
+              <label class="form-label" for="admin-email">Email address</label>
+              <input class="form-control form-control-lg" [(ngModel)]="userLogin.username" id="admin-email" name="username" type="email" autocomplete="username" placeholder="you@company.com" required>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex align-items-center justify-content-between">
+                <label class="form-label" for="admin-password">Password</label>
+                <a class="subtle-link small" href="#">Forgot password?</a>
+              </div>
+              <input class="form-control form-control-lg" [(ngModel)]="userLogin.password" id="admin-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+            </div>
+            <div class="form-check mb-4">
+              <input class="form-check-input" id="remember-me" type="checkbox">
+              <label class="form-check-label text-muted" for="remember-me">Remember me</label>
+            </div>
+            <button class="btn btn-primary btn-lg w-100" (click)="onLogin()" type="button">Sign in to dashboard <span aria-hidden="true">→</span></button>
+          </form>
+          <div class="login-footnote mt-4">
+            <span class="status-dot"></span>
+            Admin sign-in prototype · Authentication is not connected
+          </div>
+          <p class="text-center text-muted small mt-5 mb-0">Need help? Contact your workspace administrator.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,35 @@
+.customer-page { background: #f8f8fc; min-height: 100vh; }
+.customer-header { background: #fff; border-bottom: 1px solid var(--line); }
+.customer-header .brand-mark { height: 33px; width: 33px; }
+.customer-header .brand-name { font-size: 18px; }
+.customer-nav-link { color: #666a7c; font-size: 12px; font-weight: 600; }
+.customer-nav-count { background: #f0efff; border-radius: 20px; color: var(--brand); font-size: 9px; margin-left: 5px; padding: 3px 6px; }
+.customer-user { align-items: center; border-left: 1px solid #eeeeF4; color: #5f6276; display: flex; font-size: 11px; gap: 9px; margin-left: 10px; padding-left: 20px; }
+.customer-user .avatar { height: 30px; width: 30px; }
+.customer-content { padding-bottom: 32px; padding-top: 38px; }
+.customer-welcome { padding: 0 2px; }
+.customer-welcome .page-title { font-size: 28px; }
+.inquiry-form-card { padding: 0 24px 23px; }
+.inquiry-form-card .card-heading { padding: 23px 0 20px; }
+.inquiry-form-card .form-control, .inquiry-form-card .form-select { font-size: 12px; }
+.privacy-note { align-items: center; color: #9295a5; display: flex; font-size: 10px; gap: 8px; line-height: 1.4; }
+.privacy-note span:first-child { color: var(--brand); font-size: 14px; }
+.my-inquiries-section { margin-top: 31px; }
+.section-title { color: #303347; font-size: 15px; font-weight: 700; margin-bottom: 5px; }
+.section-subtitle { color: #9698a9; font-size: 11px; }
+.customer-inquiry-card { background: white; border: 1px solid #eeeef4; border-radius: 10px; padding: 15px; }
+.customer-inquiry-date { color: #a1a3b1; font-size: 10px; }
+.customer-inquiry-card h3 { color: #414457; font-size: 12px; font-weight: 650; margin: 13px 0 6px; }
+.customer-inquiry-meta { align-items: center; color: #9a9cad; display: flex; font-size: 10px; gap: 7px; }
+.customer-inquiry-card > a { color: var(--brand); display: inline-block; font-size: 10px; font-weight: 600; margin-top: 14px; }
+.customer-inquiry-card > a span { margin-left: 3px; }
+.customer-footer { color: #9698a9; font-size: 10px; margin: 27px 0 0; }
+.customer-footer a { color: var(--brand); font-weight: 600; }
+@media (max-width: 575.98px) {
+  .customer-header .container { padding-left: 14px; padding-right: 14px; }
+  .customer-user { font-size: 0; gap: 0; margin-left: 0; padding-left: 11px; }
+  .customer-user .profile-menu { display: none; }
+  .customer-content { padding-top: 27px; }
+  .inquiry-form-card { padding: 0 16px 18px; }
+  .customer-welcome .page-title { font-size: 25px; }
+}

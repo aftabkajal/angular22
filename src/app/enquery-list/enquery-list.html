@@ -1,0 +1,81 @@
+<div class="admin-shell">
+  <aside class="sidebar d-none d-lg-flex flex-column">
+    <a class="brand-lockup" href="/home"><span class="brand-mark">i</span><span
+        class="brand-name">inquiry<span>desk</span></span></a>
+    <div class="sidebar-label">WORKSPACE</div>
+    <nav class="nav flex-column sidebar-nav">
+      <a class="nav-link" href="/enquery-list"><span class="nav-icon">▦</span>Overview</a>
+      <a class="nav-link active" href="/enquery-list"><span class="nav-icon">☷</span>Inquiries<span
+          class="nav-count">10</span></a>
+    </nav>
+    <div class="sidebar-label mt-4">SETTINGS</div>
+    <nav class="nav flex-column sidebar-nav">
+      <a class="nav-link" href="/status"><span class="nav-icon">◉</span>Status master</a>
+      <a class="nav-link" href="/Category"><span class="nav-icon">◈</span>Category master</a>
+    </nav>
+    <div class="sidebar-bottom mt-auto">
+      <div class="upgrade-card">
+        <div class="upgrade-spark">✦</div><strong>Need a hand?</strong>
+        <p>Our support team is here to help you.</p><a href="#">Contact support <span>→</span></a>
+      </div>
+      <div class="admin-profile">
+        <div class="avatar">JD</div>
+        <div class="profile-copy"><strong>Jordan Davis</strong><small>Administrator</small></div><span
+          class="profile-menu">•••</span>
+      </div>
+    </div>
+  </aside>
+  <main class="main-panel">
+    <header class="topbar">
+      <div class="d-flex align-items-center gap-2 text-muted small"><span>Workspace</span><span>/</span><strong
+          class="text-dark">Inquiries</strong></div>
+      <div class="d-flex align-items-center gap-3"><button class="icon-button" type="button"
+          aria-label="Notifications">♧<span class="notification-dot"></span></button>
+        <div class="topbar-avatar">JD</div>
+      </div>
+    </header>
+    <div class="page-content container-fluid">
+      <div class="row align-items-end g-3 mb-4">
+        <div class="col">
+          <div class="eyebrow mb-2">CUSTOMER MESSAGES</div>
+          <h1 class="page-title">Inquiries</h1>
+          <p class="page-subtitle mb-0">Review inquiry details, follow-ups, and customer feedback.</p>
+        </div>
+        <div class="col-auto"><span class="badge rounded-pill text-bg-success px-3 py-2">{{ enquryList().length }}
+            inquiries retrieved</span></div>
+      </div>
+
+      <section aria-label="Inquiry results">
+        @for (item of enquryList(); track $index) {
+        <article class="content-card p-3 p-lg-4 mb-3">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3 mb-3">
+            <div class="d-flex align-items-center gap-3">
+              <div class="person-avatar peach">{{item.customerName.charAt(0)}}</div>
+              <div>
+                <h2 class="h5 mb-1">{{item.customerName}} <span class="text-muted fs-6">{{item.enquiryId}}</span></h2>
+                <div class="small text-muted"><a
+                    href="mailto:admin@skybridgeconsulting.com">{{item.customerEmail}}</a><span class="mx-2">·</span><a
+                    href="tel:{{item.customerPhone}}">{{item.customerPhone}}</a></div>
+              </div>
+            </div>
+            <span class="status-badge status-progress"><i></i>{{item.statusName}}</span>
+          </div>
+          <p class="mb-3">{{item.message}}</p>
+          <div class="row g-3 small">
+            <div class="col-6 col-lg-3"><span class="text-muted d-block">Category</span>{{item.categoryName}} <span
+                class="text-muted">({{item.categoryId}})</span></div>
+            <div class="col-6 col-lg-3"><span class="text-muted d-block">Inquiry type</span>{{item.enquiryType}}</div>
+            <div class="col-6 col-lg-3"><span class="text-muted d-block">Received</span>{{item.enquiryDate}}</div>
+            <div class="col-6 col-lg-3"><span class="text-muted d-block">Follow-up</span>{{item.followUpDate}}</div>
+            <div class="col-6"><span class="text-muted d-block">Feedback</span>{{item.feedback}}</div>
+            <div class="col-6"><span class="text-muted d-block">Converted</span><span
+                class="badge text-bg-light">{{item.isConverted ? 'Yes' : 'No'}}</span></div>
+          </div>
+        </article>
+        }
+
+
+      </section>
+    </div>
+  </main>
+</div>

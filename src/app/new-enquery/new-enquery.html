@@ -1,0 +1,108 @@
+<div class="customer-page">
+ <!-- Header  Off
+  <header class="customer-header">
+    <div class="container">
+      <div class="row align-items-center py-3">
+        <div class="col"><a class="brand-lockup" href="/home"><span class="brand-mark">i</span><span class="brand-name">inquiry<span>desk</span></span></a></div>
+        <div class="col-auto">
+          <div class="customer-user">
+            <div class="avatar">AM</div><span>Alex Morgan</span><span class="profile-menu">⌄</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  -->
+  <main class="container customer-content">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-9 col-xl-8">
+        <div class="customer-welcome mb-4">
+          <div class="eyebrow mb-2">WE'RE HERE TO HELP</div>
+          <h1 class="page-title">How can we help you?</h1>
+          <p class="page-subtitle mb-0">Send us a message and our team will get back to you as soon as possible.</p>
+        </div>
+        <section class="content-card inquiry-form-card">
+          <div class="card-heading">
+            <h2>Submit a new inquiry</h2>
+            <p>Fields marked with <span class="required-mark">*</span> are required</p>
+          </div>
+          <form>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="customerName">Full name <span class="required-mark">*</span></label>
+                <input class="form-control" [formField]="enquiryForm.customerName" id="customerName" type="text" placeholder="e.g. Alex Morgan">
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="customerEmail">Email address <span class="required-mark">*</span></label>
+                <input class="form-control" [formField]="enquiryForm.customerEmail" id="customerEmail" type="email" placeholder="you@example.com">
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="customerPhone">Phone number</label>
+                <input class="form-control" [formField]="enquiryForm.customerPhone" id="customerPhone" type="tel" placeholder="Enter phone number">
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="enquiryType">Inquiry type</label>
+                <input class="form-control" [formField]="enquiryForm.enquiryType" id="enquiryType"  type="text" placeholder="Enter inquiry type">
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="categoryId">Category</label>
+                <select class="form-select" [formField]="enquiryForm.categoryId" id="categoryId" >
+                  <option value="" selected disabled>Select a category</option>
+                  @for (item of categoryList(); track $index) {
+                    <option [value]="item.categoryId">{{ item.categoryName }}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="statusId">Status</label>
+                <select class="form-select" [formField]="enquiryForm.statusId" id="statusId" >
+                  <option value="" selected disabled>Select a status</option>
+                  @for (item of statusList(); track $index) {
+                    <option [value]="item.statusId">{{ item.statusName }}</option>
+                  }
+                </select>
+              </div>
+   <!-- Feedback field   
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="enquiryDate">Inquiry date</label>
+                <input class="form-control" [formField]="enquiryForm.enquiryDate" id="enquiryDate" name="enquiryDate" type="datetime-local">
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label" for="followUpDate">Follow-up date</label>
+                <input class="form-control" [formField]="enquiryForm.followUpDate" id="followUpDate" name="followUpDate" type="datetime-local">
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="message">Message <span class="required-mark">*</span></label>
+                <textarea class="form-control" [formField]="enquiryForm.message" id="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+              </div>
+  
+              <div class="col-12">
+                <label class="form-label" for="feedback">Feedback</label>
+                <textarea class="form-control" [formField]="enquiryForm.feedback" id="feedback" name="feedback" rows="3" placeholder="Add any feedback"></textarea>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" [formField]="enquiryForm.isConverted" id="isConverted" name="isConverted" type="checkbox">
+                  <label class="form-check-label" for="isConverted">Inquiry converted</label>
+                </div>
+              </div>
+                            -->
+              <div class="col-12 mt-4">
+                <div class="row align-items-center g-3">
+                  <div class="col-12 col-md">
+                    <div class="privacy-note"><span>♧</span><span>Your information is private and will only be used to respond to your inquiry.</span></div>
+                  </div>
+                  <div class="col-12 col-md-auto">
+                    <button class="btn btn-primary" (click)="saveEnquery()" type="submit">Send inquiry <span aria-hidden="true">→</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+        <p class="text-center customer-footer">Need an immediate answer? Visit our <a href="#help-center">Help Center</a>.</p>
+      </div>
+    </div>
+  </main>
+</div>

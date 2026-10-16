@@ -1,0 +1,14 @@
+.login-page { background: radial-gradient(ellipse at 50% 8%, #f0edff 0, #f7f7fb 48%, #f6f7fb 100%); }
+.login-card { background: rgba(255,255,255,.88); border: 1px solid rgba(234,233,244,.95); border-radius: 17px; box-shadow: 0 18px 55px rgba(44,39,91,.08); padding: 40px 38px 32px; }
+.login-title { color: #25283d; font-size: 29px; font-weight: 700; letter-spacing: -1px; margin-bottom: 8px; }
+.login-kicker { align-items: center; display: flex; gap: 9px; }
+.demo-badge { background: #f0efff; border-radius: 20px; color: var(--brand); font-size: 8px; font-weight: 750; letter-spacing: .7px; padding: 4px 7px; }
+.login-card .form-control-lg { font-size: 13px; min-height: 47px; }
+.login-card .form-check-input { border-color: #d9dae5; }
+.login-card .form-check-input:checked { background-color: var(--brand); border-color: var(--brand); }
+.login-card .form-check-label { font-size: 11px; }
+.login-card .btn-lg { font-size: 13px; min-height: 47px; }
+.login-card .btn-lg span { margin-left: 8px; }
+.login-footnote { align-items: center; color: #8f92a3; display: flex; font-size: 10px; gap: 7px; justify-content: center; }
+.status-dot { background: #59bd8c; border-radius: 50%; box-shadow: 0 0 0 3px #e6f7ee; height: 6px; width: 6px; }
+@media (max-width: 575.98px) { .login-card { padding: 32px 22px 25px; } }
